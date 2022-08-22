@@ -1,0 +1,14 @@
+modLoader="javafml"
+loaderVersion="[39,)"
+license="MIT"
+
+[[mods]]
+modId="bsvsb"
+version="${version}"
+displayName="Better Rubidium Video Settings"
+logoFile="icon.png"
+description='''
+Changes the Sodium Forge Port Video settings back to the original, You can get to the Sodium Forge Port Video Settings page via the Vanilla video settings page.
+'''
+credits="LimeShulkerBox,TexTrue"
+authors="TexTrueStudio"

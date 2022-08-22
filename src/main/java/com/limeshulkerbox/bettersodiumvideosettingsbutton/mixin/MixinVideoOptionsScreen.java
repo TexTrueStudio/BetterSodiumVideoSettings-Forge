@@ -1,6 +1,6 @@
 package com.limeshulkerbox.bettersodiumvideosettingsbutton.mixin;
 
-import net.fabricmc.loader.api.FabricLoader;
+//import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.VideoOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonListWidget;
@@ -14,6 +14,8 @@ import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.lang.reflect.Constructor;
+
+import static com.limeshulkerbox.bettersodiumvideosettingsbutton.client.BSVSBClientMod.RSOLoaded;
 
 @Mixin(VideoOptionsScreen.class)
 public abstract class MixinVideoOptionsScreen extends Screen {
@@ -37,8 +39,8 @@ public abstract class MixinVideoOptionsScreen extends Screen {
 
     @Inject(method = "init", at = @At("HEAD"))
     void mixinInit(CallbackInfo callbackInfo) {
-        this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height - 27, 150, 20, new TranslatableText("text.bettersodiumvideosettings.sodiumvideosettings"), (button) -> {
-            if (FabricLoader.getInstance().isModLoaded("reeses-sodium-options")) {
+        this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height - 27, 150, 20, new TranslatableText("button.bsvsb.video_settings_button"), (button) -> {
+            if (RSOLoaded) {
                 flashyReesesOptionsScreen();
             } else {
                 sodiumVideoOptionsScreen();
