@@ -9,9 +9,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "1.19" ]
+    branches: [ "1.19-forge/dev" ]
   pull_request:
-    branches: [ "1.19" ]
+    branches: [ "1.19-forge/dev" ]
 
 permissions:
   contents: read
@@ -28,7 +28,12 @@ jobs:
       with:
         java-version: '17'
         distribution: 'adopt'
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
+      run: ./gradlew build
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v1
       with:
-        arguments: build
+          name: BSVSB-Forge_AutoBuild
+          path: build/libs
