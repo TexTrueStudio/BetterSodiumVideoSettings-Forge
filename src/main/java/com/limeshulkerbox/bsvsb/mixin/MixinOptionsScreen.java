@@ -1,9 +1,12 @@
-package com.limeshulkerbox.bettersodiumvideosettingsbutton.mixin;
+package com.limeshulkerbox.bsvsb.mixin;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.VideoOptionsScreen;
+//import net.minecraft.client.gui.screen.option.OptionsScreen;
+//import net.minecraft.client.gui.screen.option.VideoOptionsScreen;
 import net.minecraft.client.gui.screen.options.OptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
+//import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.options.GameOptions;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -14,9 +17,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = OptionsScreen.class, priority = 9999)
-public class MixinOptionsScreen extends Screen {
-
+@Mixin(value = OptionsScreen.class, priority = -5000)
+public abstract class MixinOptionsScreen extends Screen {
     @Shadow
     @Final
     private GameOptions settings;

@@ -1,4 +1,4 @@
-package com.limeshulkerbox.bettersodiumvideosettingsbutton.mixin;
+package com.limeshulkerbox.bsvsb.mixin;
 
 import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;
 import net.minecraft.client.gui.screen.Screen;
@@ -8,6 +8,7 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.options.Option;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import org.apache.commons.lang3.ArrayUtils;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,7 +31,7 @@ public class MixinVideoOptionsScreen extends Screen {
 
     @Inject(method = "init", at = @At("HEAD"))
     void mixinInit(CallbackInfo callbackInfo) {
-        this.addButton(new ButtonWidget(this.width / 2 + 5, this.height - 27, 150, 20, new LiteralText("Sodium Video Settings"), (button) -> {
+        this.addButton(new ButtonWidget(this.width / 2 + 5, this.height - 27, 150, 20, new TranslatableText("button.bsvsb.video_settings_button"), (button) -> {
             assert this.client != null;
             this.client.openScreen(new SodiumOptionsGUI(this));
         }));
