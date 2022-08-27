@@ -1,4 +1,4 @@
-package com.limeshulkerbox.bettersodiumvideosettingsbutton.client;
+package com.limeshulkerbox.bsvsb.client;
 
 //import net.fabricmc.api.ClientModInitializer;
 //import net.fabricmc.api.EnvType;
@@ -12,8 +12,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.NetworkConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 //@OnlyIn(Dist.CLIENT)
 @Mod(BSVSBClientMod.MODID)
