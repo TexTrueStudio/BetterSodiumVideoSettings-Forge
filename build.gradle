@@ -38,7 +38,7 @@ dependencies {
     //modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    //modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation "maven.modrinth:rubidium:${rubidium_version}"
     modImplementation "maven.modrinth:textrues-rubidium-options:${TRO_version}"
