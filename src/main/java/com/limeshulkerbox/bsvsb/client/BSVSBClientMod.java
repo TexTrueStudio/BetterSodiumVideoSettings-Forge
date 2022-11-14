@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 @Mod(BSVSBClientMod.MODID)
 public class BSVSBClientMod {
 
-    public static Logger LOGGER = LogManager.getLogger("Better Sodium Video Settings Button");
+    public static Logger LOGGER = LogManager.getLogger("Better Rubidium Video Settings Button");
 
     public static final String MODID = "bsvsb";
 
@@ -39,7 +39,7 @@ public class BSVSBClientMod {
 
     public static Logger logger() {
         if (LOGGER == null) {
-            LOGGER = LogManager.getLogger("Better Sodium Video Settings Button");
+            LOGGER = LogManager.getLogger("BRVSB");
         }
 
         return LOGGER;
