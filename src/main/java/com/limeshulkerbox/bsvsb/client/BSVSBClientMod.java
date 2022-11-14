@@ -1,8 +1,5 @@
 package com.limeshulkerbox.bsvsb.client;
 
-//import net.fabricmc.api.ClientModInitializer;
-//import net.fabricmc.api.EnvType;
-//import net.fabricmc.api.Environment;
 import net.minecraftforge.fml.IExtensionPoint;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -13,12 +10,9 @@ import net.minecraftforge.network.NetworkConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-//@OnlyIn(Dist.CLIENT)
 @Mod(BSVSBClientMod.MODID)
 public class BSVSBClientMod {
-    public static Logger LOGGER = LogManager.getLogger("Better Sodium Video Settings Button");
-
-    private static String MOD_VERSION;
+    public static Logger LOGGER = LogManager.getLogger("Better Rubidium Video Settings Button");
 
     public static final String MODID = "bsvsb";
 
@@ -44,17 +38,9 @@ public class BSVSBClientMod {
 
     public static Logger logger() {
         if (LOGGER == null) {
-            LOGGER = LogManager.getLogger("Reese's Sodium Options");
+            LOGGER = LogManager.getLogger("BRVSB");
         }
 
         return LOGGER;
-    }
-
-    public static String getVersion() {
-        if (MOD_VERSION == null) {
-            throw new NullPointerException("Mod version hasn't been populated yet");
-        }
-
-        return MOD_VERSION;
     }
 }
