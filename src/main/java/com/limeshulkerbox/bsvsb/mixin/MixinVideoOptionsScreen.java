@@ -1,6 +1,5 @@
 package com.limeshulkerbox.bsvsb.mixin;
 
-//import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
 import net.minecraft.client.gui.screen.option.VideoOptionsScreen;
@@ -22,7 +21,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import static com.limeshulkerbox.bsvsb.client.BSVSBClientMod.TROLoaded;
+import static com.limeshulkerbox.bsvsb.BRVSB.TROLoaded;
 
 @Mixin(VideoOptionsScreen.class)
 public abstract class MixinVideoOptionsScreen extends GameOptionsScreen {
@@ -48,13 +47,13 @@ public abstract class MixinVideoOptionsScreen extends GameOptionsScreen {
 
     @Inject(method = "init", at = @At("HEAD"))
     void mixinInit(CallbackInfo callbackInfo) {
-        this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height - 27, 150, 20, Text.translatable("button.bsvsb.video_settings_button"), (button) -> {
+        this.addDrawableChild(ButtonWidget.builder(Text.translatable("button.bsvsb.video_settings_button"), (button) -> {
             if (TROLoaded) {
                 flashyReesesOptionsScreen();
             } else {
                 sodiumVideoOptionsScreen();
             }
-        }));
+        }).dimensions(this.width / 2 + 5, this.height - 27, 150, 20).build());
     }
 
     @Unique

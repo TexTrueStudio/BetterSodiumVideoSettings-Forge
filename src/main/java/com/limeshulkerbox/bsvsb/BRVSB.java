@@ -1,4 +1,4 @@
-package com.limeshulkerbox.bsvsb.client;
+package com.limeshulkerbox.bsvsb;
 
 import net.minecraftforge.fml.IExtensionPoint;
 import net.minecraftforge.fml.ModList;
@@ -10,20 +10,19 @@ import net.minecraftforge.network.NetworkConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(BSVSBClientMod.MODID)
-public class BSVSBClientMod {
+@Mod(BRVSB.MODID)
+public class BRVSB {
 
     public static Logger LOGGER = LogManager.getLogger("Better Rubidium Video Settings Button");
 
     public static final String MODID = "bsvsb";
 
     public static boolean rubidiumLoaded;
-    public static boolean RSOLoaded;
-    public static boolean TROLoaded = RSOLoaded;
+    public static boolean TROLoaded;
 
 
 
-    public BSVSBClientMod() {
+    public BRVSB() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onInitializeClient);
 
         ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class, () -> new IExtensionPoint.DisplayTest(() -> NetworkConstants.IGNORESERVERONLY, (a, b) -> true));
