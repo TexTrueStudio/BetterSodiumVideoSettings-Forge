@@ -1,6 +1,5 @@
 package com.limeshulkerbox.bsvsb.mixin;
 
-//import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.VideoOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonListWidget;
@@ -14,8 +13,9 @@ import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.lang.reflect.Constructor;
+import java.util.List;
 
-import static com.limeshulkerbox.bsvsb.client.BSVSBClientMod.RSOLoaded;
+import static com.limeshulkerbox.bsvsb.BRVSB.TROLoaded;
 
 @Mixin(VideoOptionsScreen.class)
 public abstract class MixinVideoOptionsScreen extends Screen {
@@ -40,7 +40,7 @@ public abstract class MixinVideoOptionsScreen extends Screen {
     @Inject(method = "init", at = @At("HEAD"))
     void mixinInit(CallbackInfo callbackInfo) {
         this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height - 27, 150, 20, new TranslatableText("button.bsvsb.video_settings_button"), (button) -> {
-            if (RSOLoaded) {
+            if (TROLoaded) {
                 flashyReesesOptionsScreen();
             } else {
                 sodiumVideoOptionsScreen();
@@ -52,7 +52,7 @@ public abstract class MixinVideoOptionsScreen extends Screen {
     void flashyReesesOptionsScreen() {
         if (SodiumVideoOptionsScreenClassCtor == null) {
             try {
-                SodiumVideoOptionsScreenClassCtor = Class.forName("me.flashyreese.mods.reeses_sodium_options.client.gui.SodiumVideoOptionsScreen").getConstructor(Screen.class);
+                SodiumVideoOptionsScreenClassCtor = Class.forName("me.flashyreese.mods.reeses_sodium_options.client.gui.SodiumVideoOptionsScreen").getConstructor(Screen.class, List.class);
             } catch (Exception e) {
                 e.printStackTrace();
             }
