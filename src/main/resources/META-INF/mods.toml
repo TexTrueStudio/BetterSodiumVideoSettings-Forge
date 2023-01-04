@@ -17,7 +17,7 @@ You can get to the Sodium Forge Port Video Settings page via the Vanilla video s
 [[dependencies.bsvsb]]
 modId = "forge"
 mandatory = true
-versionRange = "[42,)"
+versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
 
