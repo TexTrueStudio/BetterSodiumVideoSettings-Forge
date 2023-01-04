@@ -1,4 +1,4 @@
-package com.limeshulkerbox.bsvsb.client;
+package com.limeshulkerbox.bsvsb;
 
 import net.minecraftforge.fml.ExtensionPoint;
 //import net.minecraftforge.fml.IExtensionPoint;
@@ -13,22 +13,19 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(BSVSBClientMod.MODID)
-public class BSVSBClientMod {
+@Mod(BRVSB.MODID)
+public class BRVSB {
 
-    public static Logger LOGGER = LogManager.getLogger("Better Sodium Video Settings Button");
-
-    private static String MOD_VERSION;
+    public static Logger LOGGER = LogManager.getLogger("Better Rubidium Video Settings Button");
 
     public static final String MODID = "bsvsb";
 
     public static boolean rubidiumLoaded;
-    public static boolean RSOLoaded;
-    public static boolean TROLoaded = RSOLoaded;
+    public static boolean TROLoaded;
 
 
 
-    public BSVSBClientMod() {
+    public BRVSB() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onInitializeClient);
 
         ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.DISPLAYTEST, () -> Pair.of(() -> FMLNetworkConstants.IGNORESERVERONLY, (a, b) -> true));
@@ -48,13 +45,5 @@ public class BSVSBClientMod {
         }
 
         return LOGGER;
-    }
-
-    public static String getVersion() {
-        if (MOD_VERSION == null) {
-            throw new NullPointerException("Mod version hasn't been populated yet");
-        }
-
-        return MOD_VERSION;
     }
 }

@@ -7,8 +7,30 @@ modId="bsvsb"
 version="${version}"
 displayName="Better Rubidium Video Settings"
 logoFile="icon.png"
+credits="LimeShulkerBox"
+authors="TexTrue, TexTrueStudio"
 description='''
-Changes the Sodium Forge Port Video settings back to the original, You can get to the Sodium Forge Port Video Settings page via the Vanilla video settings page.
+Changes the Sodium Forge Port Video settings back to the original,
+You can get to the Sodium Forge Port Video Settings page via the Vanilla video settings page.
 '''
-credits="LimeShulkerBox,TexTrue"
-authors="TexTrueStudio"
+
+[[dependencies.bsvsb]]
+modId = "forge"
+mandatory = true
+versionRange = "[36,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.bsvsb]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.16.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.bsvsb]]
+modId = "rubidium"
+mandatory = true
+versionRange = "[0.6,)"
+ordering = "NONE"
+side = "CLIENT"

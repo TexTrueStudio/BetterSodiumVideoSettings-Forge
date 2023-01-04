@@ -1,4 +1,4 @@
-package com.limeshulkerbox.bsvsb;
+package com.limeshulkerbox.bsvsb.mixin;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

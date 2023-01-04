@@ -1,12 +1,10 @@
 plugins {
-    //id 'fabric-loom' version '0.6-SNAPSHOT'
+    id 'dev.architectury.loom' version '1.0-SNAPSHOT'
     id 'maven-publish'
     id 'java-library'
-    id 'dev.architectury.loom' version '0.11.0-SNAPSHOT'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = project.archives_base_name
 version = "${project.mod_version}-mc${minecraft_version}"
@@ -24,24 +22,16 @@ repositories {
     maven {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven"
-        content {
-            includeGroup "maven.modrinth"
-        }
     }
-    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    //to change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    //modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    forge "net.minecraftforge:forge:${project.forge_version}"
 
-    //modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-    modImplementation "maven.modrinth:rubidium:${rubidium_version}"
-    modImplementation "maven.modrinth:textrues-rubidium-options:${TRO_version}"
+    modImplementation "maven.modrinth:rubidium:${project.rubidium_version}"
+    modImplementation "maven.modrinth:textrues-rubidium-options:${project.TRO_version}"
 }
 
 processResources {
