@@ -19,10 +19,7 @@ loom {
 }
 
 repositories {
-    maven {
-        name = "Modrinth"
-        url = "https://api.modrinth.com/maven"
-    }
+    maven { url "https://api.modrinth.com/maven" }
 }
 
 dependencies {
@@ -44,8 +41,6 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
-
-    // Minecraft 1.17 upwards uses Java 16.
     it.options.release = 17
 }
 
@@ -63,13 +58,7 @@ jar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            // add all the jars that should be included when publishing to maven
-            artifact(remapJar) {
-                builtBy remapJar
-            }
-            artifact(sourcesJar) {
-                builtBy remapSourcesJar
-            }
+            from components.java
         }
     }
 

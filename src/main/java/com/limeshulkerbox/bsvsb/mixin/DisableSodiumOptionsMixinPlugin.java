@@ -10,7 +10,7 @@ import static com.limeshulkerbox.bsvsb.BRVSB.LOGGER;
 
 @SuppressWarnings("unused")
 public class DisableSodiumOptionsMixinPlugin implements IMixinConfigPlugin {
-    private static final String MIXIN_SODIUM_OPTIONS_SCREEN = "me.jellysquid.mods.sodium.mixin.options.MixinOptionsScreen";
+    private static final String MIXIN_SODIUM_OPTIONS_SCREEN = "me.jellysquid.mods.sodium.mixin.features.options.MixinOptionsScreen";
 
     @Override
     public void onLoad(String mixinPackage) {

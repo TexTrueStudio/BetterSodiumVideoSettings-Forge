@@ -1,45 +1,29 @@
 package com.limeshulkerbox.bsvsb;
 
-import net.minecraftforge.fml.IExtensionPoint;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.network.NetworkConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(BRVSB.MODID)
 public class BRVSB {
     public static Logger LOGGER = LogManager.getLogger("Better Rubidium Video Settings Button");
-
     public static final String MODID = "bsvsb";
-
     public static boolean rubidiumLoaded;
     public static boolean TROLoaded;
 
-
-
     public BRVSB() {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onInitializeClient);
-
-        ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class, () -> new IExtensionPoint.DisplayTest(() -> NetworkConstants.IGNORESERVERONLY, (a, b) -> true));
-
+        IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
+        MOD_BUS.addListener(this::onInitializeClient);
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     public void onInitializeClient(final FMLClientSetupEvent event) {
-
         TROLoaded = ModList.get().isLoaded("reeses_sodium_options");
         rubidiumLoaded = ModList.get().isLoaded("rubidium");
-
-    }
-
-    public static Logger logger() {
-        if (LOGGER == null) {
-            LOGGER = LogManager.getLogger("BRVSB");
-        }
-
-        return LOGGER;
     }
 }
