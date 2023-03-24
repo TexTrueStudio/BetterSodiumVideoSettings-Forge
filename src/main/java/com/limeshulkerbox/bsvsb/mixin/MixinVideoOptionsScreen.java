@@ -16,7 +16,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import static com.limeshulkerbox.bsvsb.BRVSB.TROLoaded;
+import static com.limeshulkerbox.bsvsb.BSVSBForge.TROLoaded;
 
 @Mixin(VideoOptionsScreen.class)
 public abstract class MixinVideoOptionsScreen extends Screen {

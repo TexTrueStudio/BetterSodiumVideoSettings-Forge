@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import java.util.List;
 import java.util.Set;
 
-import static com.limeshulkerbox.bsvsb.BRVSB.LOGGER;
+import static com.limeshulkerbox.bsvsb.BSVSBForge.LOGGER;
 
 @SuppressWarnings("unused")
 public class DisableSodiumOptionsMixinPlugin implements IMixinConfigPlugin {
