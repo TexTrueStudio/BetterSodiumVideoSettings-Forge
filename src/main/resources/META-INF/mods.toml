@@ -6,6 +6,7 @@ license="MIT"
 modId="bsvsb"
 version="${version}"
 displayName="Better Rubidium Video Settings"
+displayURL="https://github.com/TexTrueStudio/BetterSodiumVideoSettings-Forge"
 logoFile="icon.png"
 credits="LimeShulkerBox"
 authors="TexTrue, TexTrueStudio"
@@ -24,7 +25,7 @@ side = "BOTH"
 [[dependencies.bsvsb]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.3,]"
+versionRange = "[1.19.3,)"
 ordering = "NONE"
 side = "BOTH"
 
