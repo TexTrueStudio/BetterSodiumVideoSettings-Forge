@@ -11,8 +11,8 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(BRVSB.MODID)
-public class BRVSB {
+@Mod(BSVSBForge.MODID)
+public class BSVSBForge {
 
     public static Logger LOGGER = LogManager.getLogger("Better Rubidium Video Settings Button");
 
@@ -23,7 +23,7 @@ public class BRVSB {
 
 
 
-    public BRVSB() {
+    public BSVSBForge() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onInitializeClient);
 
         ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.DISPLAYTEST, () -> Pair.of(() -> FMLNetworkConstants.IGNORESERVERONLY, (a, b) -> true));
