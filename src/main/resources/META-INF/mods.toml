@@ -10,8 +10,8 @@ logoFile="icon.png"
 credits="LimeShulkerBox"
 authors="TexTrue, TexTrueStudio"
 description='''
-Changes the Sodium Forge Port Video settings back to the original,
-You can get to the Sodium Forge Port Video Settings page via the Vanilla video settings page.
+Changes the Rubidium Video settings back to the original,
+You can get to the Rubidium Video Settings page via the Vanilla video settings page.
 '''
 
 [[dependencies.bsvsb]]

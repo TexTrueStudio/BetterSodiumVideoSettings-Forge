@@ -1,5 +1,6 @@
 package com.limeshulkerbox.bsvsb.mixin;
 
+import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.VideoOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonListWidget;
@@ -11,10 +12,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.lang.reflect.Constructor;
-
-import static com.limeshulkerbox.bsvsb.BRVSB.TROLoaded;
 
 @Mixin(VideoOptionsScreen.class)
 public class MixinVideoOptionsScreen extends Screen {
