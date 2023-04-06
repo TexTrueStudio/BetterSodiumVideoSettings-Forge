@@ -21,27 +21,15 @@ public class BSVSBForge {
     public static boolean rubidiumLoaded;
     public static boolean TROLoaded;
 
-
-
     public BSVSBForge() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onInitializeClient);
 
         ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.DISPLAYTEST, () -> Pair.of(() -> FMLNetworkConstants.IGNORESERVERONLY, (a, b) -> true));
-
     }
 
     public void onInitializeClient(final FMLClientSetupEvent event) {
-
         TROLoaded = ModList.get().isLoaded("reeses_sodium_options");
         rubidiumLoaded = ModList.get().isLoaded("rubidium");
 
-    }
-
-    public static Logger logger() {
-        if (LOGGER == null) {
-            LOGGER = LogManager.getLogger("BSVSB");
-        }
-
-        return LOGGER;
     }
 }
