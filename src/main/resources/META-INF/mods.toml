@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[39,)"
+license="MIT"
+
+[[mods]]
+modId="bsvsb"
+version="${version}"
+displayName="Better Rubidium Video Settings"
+displayURL="https://github.com/TexTrueStudio/BetterSodiumVideoSettings-Forge"
+logoFile="icon.png"
+credits="LimeShulkerBox"
+authors="TexTrue, TexTrueStudio"
+description='''
+Changes the Rubidium Video settings back to the original,
+You can get to the Rubidium Video Settings page via the Vanilla video settings page.
+'''
+
+[[dependencies.bsvsb]]
+modId = "forge"
+mandatory = true
+versionRange = "[39,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.bsvsb]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20,]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.bsvsb]]
+modId = "rubidium"
+mandatory = true
+versionRange = "[0.5,)"
+ordering = "NONE"
+side = "CLIENT"
